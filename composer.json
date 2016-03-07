@@ -1,7 +1,7 @@
 {
   "name": "hindy/orm",
   "homepage": "https://github.com/hashstudio/Mindy_Orm",
-  "version": "0.9.9.2",
+  "version": "0.9.9.3",
   "license": "MIT",
   "autoload": {
     "psr-4": {
@@ -25,6 +25,11 @@
       "name": "Maxim Falaleev",
       "email": "max@studio107.ru",
       "homepage": "http://studio107.ru",
+      "role": "Developer"
+    },
+    {
+      "name": "Anton Okulov",
+      "email": "qantus@mail.ru",
       "role": "Developer"
     }
   ],

@@ -542,110 +542,110 @@ abstract class TreeModelTest extends OrmDatabaseTestCase
         $nested->delete();
 
         $this->assertEquals([
-                [
-                    'id' => '1',
-                    'parent_id' => NULL,
-                    'lft' => '1',
-                    'rgt' => '8',
-                    'level' => '1',
-                    'root' => '1',
-                    'name' => 'test',
-                    'slug' => 'test',
-                    'items' =>
+            [
+                'id' => '1',
+                'parent_id' => NULL,
+                'lft' => '1',
+                'rgt' => '8',
+                'level' => '1',
+                'root' => '1',
+                'name' => 'test',
+                'slug' => 'test',
+                'items' =>
+                    [
                         [
+                            'id' => '2',
+                            'parent_id' => '1',
+                            'lft' => '2',
+                            'rgt' => '3',
+                            'level' => '2',
+                            'root' => '1',
+                            'name' => 'test5',
+                            'slug' => 'test/test5',
+                            'items' =>
                                 [
-                                    'id' => '2',
-                                    'parent_id' => '1',
-                                    'lft' => '2',
-                                    'rgt' => '3',
-                                    'level' => '2',
-                                    'root' => '1',
-                                    'name' => 'test5',
-                                    'slug' => 'test/test5',
-                                    'items' =>
-                                        [
-                                        ],
-                                ],
-                                [
-                                    'id' => '3',
-                                    'parent_id' => '1',
-                                    'lft' => '4',
-                                    'rgt' => '5',
-                                    'level' => '2',
-                                    'root' => '1',
-                                    'name' => 'test6',
-                                    'slug' => 'test/test6',
-                                    'items' =>
-                                        [
-                                        ],
                                 ],
                         ],
-                ],
-                [
-                    'id' => '5',
-                    'parent_id' => NULL,
-                    'lft' => '1',
-                    'rgt' => '2',
-                    'level' => '1',
-                    'root' => '2',
-                    'name' => 'test8',
-                    'slug' => 'test8',
-                    'items' =>
                         [
-                        ],
-                ],
-                [
-                    'id' => '6',
-                    'parent_id' => NULL,
-                    'lft' => '1',
-                    'rgt' => '8',
-                    'level' => '1',
-                    'root' => '3',
-                    'name' => 'test1',
-                    'slug' => 'test1',
-                    'items' =>
-                        [
+                            'id' => '3',
+                            'parent_id' => '1',
+                            'lft' => '4',
+                            'rgt' => '5',
+                            'level' => '2',
+                            'root' => '1',
+                            'name' => 'test6',
+                            'slug' => 'test/test6',
+                            'items' =>
                                 [
-                                    'id' => '7',
-                                    'parent_id' => '6',
-                                    'lft' => '2',
-                                    'rgt' => '3',
-                                    'level' => '2',
-                                    'root' => '3',
-                                    'name' => 'test2',
-                                    'slug' => 'test1/test2',
-                                    'items' =>
-                                        [
-                                        ],
-                                ],
-                                [
-                                    'id' => '8',
-                                    'parent_id' => '6',
-                                    'lft' => '4',
-                                    'rgt' => '5',
-                                    'level' => '2',
-                                    'root' => '3',
-                                    'name' => 'test3',
-                                    'slug' => 'test1/test3',
-                                    'items' =>
-                                        [
-                                        ],
-                                ],
-                                [
-                                    'id' => '9',
-                                    'parent_id' => '6',
-                                    'lft' => '6',
-                                    'rgt' => '7',
-                                    'level' => '2',
-                                    'root' => '3',
-                                    'name' => 'test4',
-                                    'slug' => 'test1/test4',
-                                    'items' =>
-                                        [
-                                        ],
                                 ],
                         ],
-                ],
+                    ],
+            ],
+            [
+                'id' => '5',
+                'parent_id' => NULL,
+                'lft' => '1',
+                'rgt' => '2',
+                'level' => '1',
+                'root' => '2',
+                'name' => 'test8',
+                'slug' => 'test8',
+                'items' =>
+                    [
+                    ],
+            ],
+            [
+                'id' => '6',
+                'parent_id' => NULL,
+                'lft' => '1',
+                'rgt' => '8',
+                'level' => '1',
+                'root' => '3',
+                'name' => 'test1',
+                'slug' => 'test1',
+                'items' =>
+                    [
+                        [
+                            'id' => '7',
+                            'parent_id' => '6',
+                            'lft' => '2',
+                            'rgt' => '3',
+                            'level' => '2',
+                            'root' => '3',
+                            'name' => 'test2',
+                            'slug' => 'test1/test2',
+                            'items' =>
+                                [
+                                ],
+                        ],
+                        [
+                            'id' => '8',
+                            'parent_id' => '6',
+                            'lft' => '4',
+                            'rgt' => '5',
+                            'level' => '2',
+                            'root' => '3',
+                            'name' => 'test3',
+                            'slug' => 'test1/test3',
+                            'items' =>
+                                [
+                                ],
+                        ],
+                        [
+                            'id' => '9',
+                            'parent_id' => '6',
+                            'lft' => '6',
+                            'rgt' => '7',
+                            'level' => '2',
+                            'root' => '3',
+                            'name' => 'test4',
+                            'slug' => 'test1/test4',
+                            'items' =>
+                                [
+                                ],
+                        ],
+                    ],
+            ],
         ],NestedModel::tree()->asTree()->all());
 
     }
