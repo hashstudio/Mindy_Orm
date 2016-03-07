@@ -1,0 +1,17 @@
+.DS_Store
+.phpcomplete_extended
+.idea
+*.iml
+
+benchmark
+build
+composer.lock
+vendor
+Tests/media/*
+Tests/runtime/*
+Tests/migration/*
+Tests/config_local.php
+test.php
+phpunit.phar
+
+*.swp

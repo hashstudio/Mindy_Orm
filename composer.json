@@ -1,0 +1,34 @@
+{
+  "name": "hindy/orm",
+  "homepage": "https://github.com/hashstudio/Mindy_Orm",
+  "version": "0.9.9.2",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Mindy\\Orm\\": "src/Mindy/Orm"
+    }
+  },
+  "require": {
+    "hindy/di": "^0.1.0",
+    "hindy/application": "0.*",
+    "hindy/logger": "^1.0",
+    "hindy/query": "^0.4",
+    "hindy/tests": "^0.1.0",
+    "hindy/validation": "0.1.4.3",
+    "imagine/imagine": "^0.6.2",
+    "hindy/storage": "^0.1.4"
+  },
+  "require-dev": {
+  },
+  "authors": [
+    {
+      "name": "Maxim Falaleev",
+      "email": "max@studio107.ru",
+      "homepage": "http://studio107.ru",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/hashstudio/Mindy_Orm/issues?state=open"
+  }
+}

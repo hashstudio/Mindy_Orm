@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false"
+         syntaxCheck="true"
+         bootstrap="Tests/bootstrap.php"
+        >
+    <php>
+        <ini name="memory_limit" value="-1"/>
+        <ini name="display_errors" value="1"/>
+        <ini name="error_reporting" value="-1"/>
+        <ini name="date.timezone" value="Europe/Moscow"/>
+    </php>
+
+    <testsuites>
+        <testsuite name="Orm/Sqlite">
+            <directory>Tests/Cases/Orm/Sqlite/</directory>
+        </testsuite>
+        <testsuite name="Orm/Mysql">
+            <directory>Tests/Cases/Orm/Mysql/</directory>
+        </testsuite>
+        <testsuite name="Orm/Pgsql">
+            <directory>Tests/Cases/Orm/Pgsql/</directory>
+        </testsuite>
+        <testsuite name="Orm/Fields">
+            <directory>Tests/Cases/Orm/Fields/</directory>
+        </testsuite>
+        <testsuite name="Orm/Migration">
+            <directory>Tests/Cases/Migration/</directory>
+        </testsuite>
+        <testsuite name="Orm/Validation">
+            <directory>Tests/Cases/Orm/Validation/</directory>
+        </testsuite>
+        <testsuite name="Orm/Basic">
+            <directory>Tests/Cases/Orm/Basic/</directory>
+        </testsuite>
+        <testsuite name="Orm/Issues">
+            <directory>Tests/Cases/Orm/Issues/</directory>
+        </testsuite>
+    </testsuites>
+
+    <groups>
+        <exclude>
+            <group>benchmark</group>
+        </exclude>
+    </groups>
+
+    <filter>
+        <whitelist>
+            <directory suffix=".php">../src/</directory>
+        </whitelist>
+    </filter>
+
+    <!--
+    <logging>
+        <log type="coverage-html" target="build/logs/coverage" charset="UTF-8"
+             yui="true" highlight="true" lowUpperBound="50" highLowerBound="80"/>
+    </logging>
+    -->
+</phpunit>
