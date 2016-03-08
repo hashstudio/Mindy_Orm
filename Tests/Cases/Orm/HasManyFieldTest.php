@@ -16,6 +16,9 @@ namespace Tests\Orm;
 
 use Mindy\Query\ConnectionManager;
 use Modules\Tests\Models\Category;
+use Modules\Tests\Models\Color;
+use Modules\Tests\Models\Cup;
+use Modules\Tests\Models\Design;
 use Modules\Tests\Models\Product;
 use Tests\OrmDatabaseTestCase;
 
