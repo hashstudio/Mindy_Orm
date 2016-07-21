@@ -7,7 +7,7 @@ use Mindy\Helper\Creator;
 use Mindy\Orm\Exception\MultipleObjectsReturned;
 use Mindy\Orm\Fields\ManyToManyField;
 use Mindy\Orm\Q\Q;
-use Modules\AltWork\Models\Issue;
+use Mindy\Query\Expression;
 
 /**
  * Class QuerySet
@@ -871,8 +871,13 @@ class QuerySet extends QuerySetBase
                 $column = substr($column, 1);
                 $sort = SORT_DESC;
             }
-            $column = $column == '?' ? $this->getQueryBuilder()->getRandomOrder() : $this->aliasColumn($column);
-            $result[$column] = $sort;
+            if ($column instanceof Expression) {
+                $result[] = $column;
+            } else {
+                $column = $column == '?' ? $this->getQueryBuilder()->getRandomOrder() : $this->aliasColumn($column);
+                $result[$column] = $sort;
+            }
+
         }
         return $result;
     }

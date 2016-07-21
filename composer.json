@@ -1,7 +1,7 @@
 {
   "name": "hindy/orm",
   "homepage": "https://github.com/hashstudio/Mindy_Orm",
-  "version": "0.9.9.3",
+  "version": "0.9.9.4",
   "license": "MIT",
   "autoload": {
     "psr-4": {
