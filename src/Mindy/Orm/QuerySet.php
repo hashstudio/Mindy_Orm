@@ -525,10 +525,19 @@ class QuerySet extends QuerySetBase
                 $relationName = substr($relationName, 0, strlen($relationName) - 8);
             }
 
-            $chain[] = $relationName;
-            /** @var Model $model */
-            /** @var \Mindy\Orm\Fields\RelatedField $relatedValue */
-            $relatedValue = $model->getField($relationName);
+            if (strpos($relationName, '#') > 0) {
+                list($rawRelationName, $key) = explode('#', $relationName);
+                $chain[] = $relationName;
+                /** @var Model $model */
+                /** @var \Mindy\Orm\Fields\RelatedField $relatedValue */
+                $relatedValue = $model->getField($rawRelationName);
+            } else {
+                $rawRelationName = $relationName;
+                $chain[] = $relationName;
+                /** @var Model $model */
+                /** @var \Mindy\Orm\Fields\RelatedField $relatedValue */
+                $relatedValue = $model->getField($relationName);
+            }
 
             // TODO prefetch_related
             if ($prefixedSelect && $relatedValue instanceof ManyToManyField) {
@@ -657,7 +666,7 @@ class QuerySet extends QuerySetBase
      * @throws \Mindy\Exception\Exception
      * @return array
      */
-    protected function parseLookup(array $query, $aliased = true, $autoGroup = true)
+    public function parseLookup(array $query, $aliased = true, $autoGroup = true)
     {
         $queryBuilder = $this->getQueryBuilder();
         $lookupQuery = [];
@@ -686,7 +695,6 @@ class QuerySet extends QuerySetBase
                 $resultQuery[$key] = $queryItem;
             }
         }
-
 
         $query = $resultQuery;
         $lookup = new LookupBuilder($query);
@@ -755,6 +763,7 @@ class QuerySet extends QuerySetBase
             $lookupParams = array_merge($lookupParams, $params);
             $lookupQuery[] = $query;
         }
+
 
         return [$lookupQuery, $lookupParams];
     }
