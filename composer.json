@@ -14,7 +14,7 @@
     "hindy/logger": "^1.0",
     "hindy/query": "^0.4",
     "hindy/tests": "^0.1.0",
-    "hindy/validation": "0.1.4.3",
+    "hindy/validation": "0.1.4.*",
     "imagine/imagine": "^0.6.2",
     "hindy/storage": "^0.1.4"
   },
